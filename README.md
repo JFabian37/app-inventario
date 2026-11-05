@@ -2,7 +2,7 @@
 
 Frontend del Panel Administrativo de Inventario, hecho con React y Vite. Incluye dashboard, productos, categorías, proveedores, kardex y usuarios, con autenticación JWT y permisos por rol.
 
-Necesita la API del repositorio `api-db` en funcionamiento.
+Necesita la API del repositorio `api-db` en funcionamiento. Las capturas de cada vista están en [docs/capturas](docs/capturas/README.md).
 
 ## Requisitos
 
