@@ -1,0 +1,29 @@
+.vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-10) var(--esp-4);
+  text-align: center;
+}
+
+.icono {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--esp-1);
+  border-radius: 50%;
+  background: var(--color-superficie-alt);
+  color: var(--color-texto-suave);
+}
+
+.titulo {
+  font-weight: 600;
+}
+
+.mensaje {
+  max-width: 44ch;
+  font-size: var(--texto-sm);
+  color: var(--color-texto-suave);
+}

@@ -1,0 +1,13 @@
+.skeleton {
+  display: block;
+  max-width: 100%;
+  border-radius: var(--esp-1);
+  background: var(--color-superficie-alt);
+  animation: pulso 1200ms ease-in-out infinite;
+}
+
+@keyframes pulso {
+  50% {
+    opacity: 0.5;
+  }
+}

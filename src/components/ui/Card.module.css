@@ -1,0 +1,24 @@
+.card {
+  min-width: 0;
+  padding: var(--esp-5);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+  background: var(--color-superficie);
+  box-shadow: var(--sombra);
+}
+
+.titulo {
+  margin-bottom: var(--esp-4);
+  font-size: var(--texto-md);
+}
+
+/* Para tablas: las celdas ya traen su propio espaciado */
+.sinRelleno {
+  padding: 0;
+  overflow: hidden;
+}
+
+.sinRelleno .titulo {
+  margin: 0;
+  padding: var(--esp-4);
+}

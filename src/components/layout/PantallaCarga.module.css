@@ -1,0 +1,20 @@
+.pantalla {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+.giro {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-borde);
+  border-top-color: var(--color-acento);
+  border-radius: 50%;
+  animation: girar 800ms linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

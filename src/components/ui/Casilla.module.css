@@ -1,0 +1,16 @@
+.casilla {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: 44px;
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.casilla input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--color-acento);
+}

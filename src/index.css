@@ -1,111 +1,155 @@
+/* Design system: todos los componentes toman de aqui sus colores, medidas y tiempos */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Superficies */
+  --color-fondo: #f5f7fa;
+  --color-superficie: #ffffff;
+  --color-superficie-alt: #eef2f7;
+  --color-borde: #dde3ec;
+  --color-borde-fuerte: #8695a8;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Texto */
+  --color-texto: #13202f;
+  --color-texto-suave: #4f5d6e;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  /* Acento */
+  --color-acento: #0b63ce;
+  --color-acento-hover: #0952ab;
+  --color-acento-suave: #e6f0fb;
+
+  /* Sidebar */
+  --color-sidebar-inicio: #0b1f3a;
+  --color-sidebar-fin: #10294d;
+  --color-sidebar-texto: #c7d4e6;
+  --color-sidebar-activo: rgba(255, 255, 255, 0.12);
+  --color-sidebar-hover: rgba(255, 255, 255, 0.07);
+
+  /* Estados */
+  --color-exito: #0e7a4b;
+  --color-exito-suave: #e3f5ec;
+  --color-peligro: #c2311f;
+  --color-peligro-hover: #a32818;
+  --color-peligro-suave: #fcebe8;
+  --color-alerta: #8f5a06;
+  --color-alerta-suave: #fdf2dc;
+
+  /* Series del grafico: orden fijo, validado para daltonismo. No reutilizar como estados */
+  --serie-1: #2a78d6;
+  --serie-2: #eb6834;
+  --serie-3: #1baf7a;
+  --serie-4: #eda100;
+  --serie-5: #e87ba4;
+  --serie-6: #008300;
+  --serie-7: #6250d6;
+  --serie-8: #e34948;
+  --serie-otras: #8695a8;
+
+  /* Espaciado en multiplos de 4px */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-5: 20px;
+  --esp-6: 24px;
+  --esp-8: 32px;
+  --esp-10: 40px;
+  --esp-12: 48px;
+
+  /* Forma */
+  --radio-md: 10px;
+  --radio-lg: 12px;
+  --sombra: 0 1px 3px rgba(11, 31, 58, 0.12);
+  --sombra-flotante: 0 8px 24px rgba(11, 31, 58, 0.18);
+
+  /* Tipografia */
+  --fuente: 'Inter Variable', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --texto-xs: 0.75rem;
+  --texto-sm: 0.875rem;
+  --texto-md: 1rem;
+  --texto-lg: 1.25rem;
+  --texto-xl: 1.625rem;
+
+  /* Movimiento y estructura */
+  --transicion: 150ms ease;
+  --sidebar-ancho: 248px;
+  --sidebar-colapsado: 72px;
+  --topbar-alto: 64px;
+
+  color-scheme: light;
+  font-family: var(--fuente);
+  color: var(--color-texto);
+  background: var(--color-fondo);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+html,
+body {
+  margin: 0;
+  min-height: 100%;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+body {
+  background: var(--color-fondo);
+  font-size: var(--texto-md);
+  line-height: 1.5;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
+
+h1,
+h2,
+h3,
 p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  font-weight: 650;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+a {
+  color: var(--color-acento);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* Con un modal abierto, la pagina de fondo no se desplaza */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

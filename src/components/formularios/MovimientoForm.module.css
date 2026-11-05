@@ -1,0 +1,13 @@
+.resultado {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-suave);
+}
+
+.resultado strong {
+  color: var(--color-texto);
+  font-variant-numeric: tabular-nums;
+}
+
+.resultado .negativo {
+  color: var(--color-peligro);
+}

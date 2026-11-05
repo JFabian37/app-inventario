@@ -1,0 +1,34 @@
+/* Piezas compartidas por las vistas de listado */
+.nombre {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-2);
+  font-weight: 500;
+}
+
+.stock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--esp-2);
+}
+
+.secundario {
+  display: block;
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+}
+
+.anulado {
+  color: var(--color-texto-suave);
+  text-decoration: line-through;
+}
+
+.limitado {
+  display: block;
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,148 @@
+.sidebar {
+  position: fixed;
+  inset-block: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-ancho);
+  padding: var(--esp-3);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(180deg, var(--color-sidebar-inicio), var(--color-sidebar-fin));
+  color: var(--color-sidebar-texto);
+  transition:
+    width var(--transicion),
+    transform var(--transicion),
+    visibility var(--transicion);
+}
+
+.sidebar :focus-visible {
+  outline-color: #ffffff;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  min-height: 40px;
+  margin-bottom: var(--esp-6);
+  padding-inline: var(--esp-1);
+}
+
+.logo {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radio-md);
+  background: var(--color-acento);
+  color: #ffffff;
+}
+
+.nombre {
+  flex: 1;
+  overflow: hidden;
+  font-size: var(--texto-sm);
+  font-weight: 650;
+  line-height: 1.25;
+  color: #ffffff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cerrar {
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: var(--radio-md);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enlace {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  min-height: 44px;
+  padding: var(--esp-2) var(--esp-3);
+  border-radius: var(--radio-md);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--transicion),
+    color var(--transicion);
+}
+
+.enlace > svg {
+  flex: none;
+}
+
+.enlace:hover {
+  background: var(--color-sidebar-hover);
+  color: #ffffff;
+}
+
+.activo,
+.activo:hover {
+  background: var(--color-sidebar-activo);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Escritorio: el colapso deja solo los iconos */
+@media (min-width: 768px) {
+  .colapsado {
+    width: var(--sidebar-colapsado);
+  }
+
+  .colapsado .nombre,
+  .colapsado .etiqueta {
+    display: none;
+  }
+
+  .colapsado .marca {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .colapsado .enlace {
+    justify-content: center;
+    padding-inline: 0;
+  }
+}
+
+/* Movil: drawer fuera de pantalla. visibility evita que se pueda enfocar estando cerrado */
+@media (max-width: 767.98px) {
+  .sidebar {
+    width: min(280px, 85vw);
+    box-shadow: var(--sombra-flotante);
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  .abierto {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .cerrar {
+    display: grid;
+  }
+}

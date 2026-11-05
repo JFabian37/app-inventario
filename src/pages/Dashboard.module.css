@@ -1,0 +1,89 @@
+/* Las tarjetas responden al espacio disponible, no a la ventana: el menu colapsable lo cambia */
+.zonaKpis {
+  container-type: inline-size;
+  margin-bottom: var(--esp-4);
+}
+
+/* Seis columnas para repartir cinco tarjetas en dos filas parejas: tres arriba, dos abajo */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--esp-4);
+}
+
+.kpi {
+  grid-column: span 2;
+}
+
+.kpi:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+@container (min-width: 1040px) {
+  .kpis {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .kpi,
+  .kpi:nth-child(n + 4) {
+    grid-column: auto;
+  }
+}
+
+@container (max-width: 559.98px) {
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kpi,
+  .kpi:nth-child(n + 4) {
+    grid-column: auto;
+  }
+
+  /* La valorizacion es la cifra mas larga: ocupa toda la fila */
+  .kpi:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--esp-1);
+}
+
+.kpiAviso {
+  border-left: 4px solid var(--color-alerta);
+}
+
+.kpiEtiqueta {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-suave);
+}
+
+.kpiValor {
+  font-size: var(--texto-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+}
+
+.detalle {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  align-items: start;
+  gap: var(--esp-4);
+}
+
+.tipo {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--esp-1);
+}
+
+@media (max-width: 1099.98px) {
+  .detalle {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

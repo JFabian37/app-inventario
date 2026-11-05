@@ -1,0 +1,12 @@
+.mensaje {
+  padding: var(--esp-5);
+  color: var(--color-texto-suave);
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--esp-2);
+  padding: var(--esp-4) var(--esp-5);
+  border-top: 1px solid var(--color-borde);
+}
